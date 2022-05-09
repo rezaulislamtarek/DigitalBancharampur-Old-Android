@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.home.HomeFragment"
+        android:label="Digital Bancharampur"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_placeFragment"
+            app:destination="@id/placeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ambulanceFragment"
+            app:destination="@id/ambulanceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_placeDetailsFragment"
+            app:destination="@id/placeDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_placeFragment2"
+            app:destination="@id/placeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.place.PlaceFragment"
+        android:label="fragment_place"
+        tools:layout="@layout/fragment_place">
+        <action
+            android:id="@+id/action_placeFragment_to_placeDetailsFragment"
+            app:destination="@id/placeDetailsFragment" />
+        <action
+            android:id="@+id/action_placeFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_placeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_placeFragment_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.car.CarFragment"
+        android:label="fragment_car"
+        tools:layout="@layout/fragment_car">
+        <action
+            android:id="@+id/action_carFragment_to_carDetailsFragment"
+            app:destination="@id/carDetailsFragment" />
+        <action
+            android:id="@+id/action_carFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_carFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ambulanceFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.ambulance.AmbulanceFragment"
+        android:label="fragment_ambulance"
+        tools:layout="@layout/fragment_ambulance">
+        <action
+            android:id="@+id/action_ambulanceFragment_to_ambulanceDetailsFragment"
+            app:destination="@id/ambulanceDetailsFragment" />
+        <action
+            android:id="@+id/action_ambulanceFragment_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_ambulanceFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_ambulanceFragment_to_addAmbulanceFragment"
+            app:destination="@id/addAmbulanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeDetailsFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.place.PlaceDetailsFragment"
+        android:label="fragment_place_details"
+        tools:layout="@layout/fragment_place_details">
+        <argument
+            android:name="place"
+            app:argType="com.diatomicsoft.digitalbancharampur.model.data.Places" />
+    </fragment>
+    <fragment
+        android:id="@+id/ambulanceDetailsFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.ambulance.AmbulanceDetailsFragment"
+        android:label="Ambulance Details"
+        tools:layout="@layout/fragment_ambulance_details">
+        <argument
+            android:name="ambulance"
+            app:argType="com.diatomicsoft.digitalbancharampur.model.data.Ambulance" />
+    </fragment>
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.car.CarDetailsFragment"
+        android:label="Car Details"
+        tools:layout="@layout/fragment_car_details">
+        <argument
+            android:name="car"
+            app:argType="com.diatomicsoft.digitalbancharampur.model.data.Car" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addPlaceFragment2"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addAmbulanceFragment"
+            app:destination="@id/addAmbulanceFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_addPlaceFragment3"
+            app:destination="@id/addPlaceFragment" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.auth.SignupFragment"
+        android:label="Signup"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_addAmbulanceFragment"
+            app:destination="@id/addAmbulanceFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_addPlaceFragment2"
+            app:destination="@id/addPlaceFragment" />
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="Signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAmbulanceFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.ambulance.AddAmbulanceFragment"
+        android:label="Add Ambulance"
+        tools:layout="@layout/fragment_add_ambulance">
+        <action
+            android:id="@+id/action_addAmbulanceFragment_to_ambulanceFragment"
+            app:destination="@id/ambulanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.car.AddCarFragment"
+        android:label="fragment_add_car"
+        tools:layout="@layout/fragment_add_car">
+        <action
+            android:id="@+id/action_addCarFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlaceFragment"
+        android:name="com.diatomicsoft.digitalbancharampur.ui.place.AddPlaceFragment"
+        android:label="Add Place"
+        tools:layout="@layout/fragment_add_place">
+        <action
+            android:id="@+id/action_addPlaceFragment_to_placeFragment"
+            app:destination="@id/placeFragment" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
+</navigation>

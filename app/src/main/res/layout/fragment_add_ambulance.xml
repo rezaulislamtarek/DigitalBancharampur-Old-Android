@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ui.ambulance.AddAmbulanceFragment">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.diatomicsoft.digitalbancharampur.ui.ambulance.AmbulanceViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="4dp"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="81dp"
+                    android:layout_height="81dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#C4DAC5"
+                    app:cardCornerRadius="100dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:id="@+id/iv_image_picker_ambu"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="center"
+                            android:src="@drawable/add_photo" />
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/cabin"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="Attach the ambulance image"
+                    android:textColor="@color/primary" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Ambulance Driver name"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:text="@={vm.ambulance.driverName}" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Mobile No"
+                    android:padding="8dp"
+                    android:text="@={vm.ambulance.mobile}" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Address"
+                    android:padding="8dp"
+                    android:text="@={vm.ambulance.address}" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Ambulance Reg Number"
+                    android:padding="8dp"
+                    android:text="@={vm.ambulance.ambulanceRegNo}" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Others"
+                    android:padding="8dp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/btn_add_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="12dp"
+                android:text="Done"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:id="@+id/progressBar"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ui.auth.SignupFragment">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.diatomicsoft.digitalbancharampur.ui.auth.AuthViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="4dp"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="81dp"
+                    android:layout_height="81dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#C4DAC5"
+                    app:cardCornerRadius="100dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:id="@+id/iv_image_picker"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="center"
+                            android:src="@drawable/add_photo" />
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/cabin"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:text="Attach your profile picture"
+                    android:textColor="@color/primary" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Your name"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:text="@={vm.auth.name}" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Mobile no"
+                    android:inputType="phone"
+                    android:padding="8dp"
+                    android:text="@={vm.auth.phone}" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Password"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:text="@={vm.auth.password}" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="5dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:fontFamily="@font/cabin"
+                    android:hint="Address"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:text="@={vm.auth.address}" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/cabin"
+                android:padding="16dp"
+                android:text="Signup"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/pbar"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </ScrollView>
+</layout>
